@@ -1,6 +1,9 @@
 <div>
   <% @girls.each do |girl| %>
-    <h1 class="success"><%= girl.info %>  <button type="button" class="btn btn-lg btn-primary">Primary</button></h1>
+    <h1 class="success"><%= girl.info %></h1>
+    <% if girl.fit? current_user %>
+      <button type="button" class="btn btn-lg btn-primary">Primary</button>
+    <% end %>
     <p class="lead"><%= girl.demand %><br><%= girl.comment %></p>
   <% end %>
 <!--   <table class="table table-striped">

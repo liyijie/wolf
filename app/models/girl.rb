@@ -17,11 +17,14 @@ class Girl < ActiveRecord::Base
   end
 
   def fit? current_user
-
+    user = current_user
+    user.age >= self.age_min and user.age <= self.age_max \
+      and user.height >= self.height_min and user.height <= self.height_max \
+      and user.age >= self.age_min and user.age <= self.age_max
   end
 
   def age
-    Time.now.year - self.birth.year
+    self.birth.nil? ? 0 : Time.now.year - self.birth.year
   end
 
   def info
