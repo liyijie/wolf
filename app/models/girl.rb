@@ -1,26 +1,40 @@
 class Girl < ActiveRecord::Base
   belongs_to :grade
 
-  def self.all_fit current_user
-    user = current_user
-    return [] unless user
-    user_grade = user.grade.to_s
-    girls = Girl.all
-    fit_girls = []
-    girls.each do |girl|
-      if user_grade == "vip"
-        fit_girls << girl if girl.grade == "member" || girl.grade == "vip"
-      elsif user_grade == "member"
-        fit_girls << girl if girl.grade == "member"
-      end
+  attr_accessor :fit_error
+
+  def self.avaliables
+    girls = []
+    self.all.each do |girl|
+      girls << girl if(girl.grade.to_s == "member" || girl.grade.to_s == "vip")
     end
+    girls
   end
 
-  def fit? current_user
+  def fit current_user
     user = current_user
-    user.age >= self.age_min and user.age <= self.age_max \
+    self.fit_error = ""
+    user_grade = user.grade.to_s
+    girl_grade = self.grade.to_s
+    if user_grade == "member" && girl_grade == "vip"
+      self.fit_error = "申请失败：此信息仅限VIP成员申请"
+      return false
+    end
+
+    if user.city == self.city
+      return true
+    else
+      self.fit_error = "申请失败：不在同一城市不允许申请，VIP成员请联系管理员"
+    end
+    
+    if (user.age >= self.age_min and user.age <= self.age_max \
       and user.height >= self.height_min and user.height <= self.height_max \
-      and user.age >= self.age_min and user.age <= self.age_max
+      and user.age >= self.age_min and user.age <= self.age_max)
+      return true
+    else
+      self.fit_error = "申请失败：您不符合对方的要求"
+      return false
+    end
   end
 
   def age

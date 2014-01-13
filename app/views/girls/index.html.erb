@@ -1,31 +1,9 @@
 <div>
   <% @girls.each do |girl| %>
     <h1 class="success"><%= girl.info %></h1>
-    <% if girl.fit? current_user %>
-      <button type="button" class="btn btn-lg btn-primary">Primary</button>
-    <% end %>
+    <%= link_to "申请", girl_path(girl), class: "btn btn-lg btn-primary" %>
     <p class="lead"><%= girl.demand %><br><%= girl.comment %></p>
+    <hr>
   <% end %>
-<!--   <table class="table table-striped">
-    <thead>
-      <tr class="success">
-        <th>城市</th>
-        <th>岁数</th>
-        <th>身高(cm)</th>
-        <th>体重(kg)</th>
-        <th>要求</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @girls.each do |girl| %>
-        <tr>
-          <td><%= girl.city %></td>
-          <td><%= girl.age %></td>
-          <td><%= girl.height %></td>
-          <td><%= girl.weight %></td>
-          <td><%= girl.demand %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table> -->
+
 </div>

@@ -8,4 +8,5 @@ class User < ActiveRecord::Base
   def age
     self.birth.nil? ? 0 : Time.now.year - self.birth.year
   end
+
 end

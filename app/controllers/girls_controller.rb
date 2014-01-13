@@ -6,12 +6,14 @@ class GirlsController < ApplicationController
   # GET /girls
   # GET /girls.json
   def index
-    @girls = Girl.all_fit current_user
+    @girls = Girl.avaliables
+    # @girls = Girl.all
   end
 
   # GET /girls/1
   # GET /girls/1.json
   def show
+    @girl.fit current_user
   end
 
   # GET /girls/new

@@ -1,69 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Qq:</strong>
-  <%= @girl.qq %>
-</p>
+<% if @girl.fit_error.size > 0 %>
+  <h1><span class="label label-danger"><%= @girl.fit_error %></span></h1>
+<% else %>
+  <h1><span class="label label-success">恭喜您申请成功</span></h1>
+  <h1>QQ号:<%= @girl.qq %></h1>
+<% end %>
 
-<p>
-  <strong>City:</strong>
-  <%= @girl.city %>
-</p>
+<hr>
 
-<p>
-  <strong>Age:</strong>
-  <%= @girl.age %>
-</p>
-
-<p>
-  <strong>Height:</strong>
-  <%= @girl.height %>
-</p>
-
-<p>
-  <strong>Weight:</strong>
-  <%= @girl.weight %>
-</p>
-
-<p>
-  <strong>Grade:</strong>
-  <%= @girl.grade_id %>
-</p>
-
-<p>
-  <strong>Age min:</strong>
-  <%= @girl.age_min %>
-</p>
-
-<p>
-  <strong>Age max:</strong>
-  <%= @girl.age_max %>
-</p>
-
-<p>
-  <strong>Height min:</strong>
-  <%= @girl.height_min %>
-</p>
-
-<p>
-  <strong>Height max:</strong>
-  <%= @girl.height_max %>
-</p>
-
-<p>
-  <strong>Weight min:</strong>
-  <%= @girl.weight_min %>
-</p>
-
-<p>
-  <strong>Weight max:</strong>
-  <%= @girl.weight_max %>
-</p>
-
-<p>
-  <strong>Comment:</strong>
-  <%= @girl.comment %>
-</p>
-
-<%= link_to 'Edit', edit_girl_path(@girl) %> |
-<%= link_to 'Back', girls_path %>
+<%= link_to '返回列表', girls_path, class: "btn btn-lg btn-primary" %>
