@@ -1,0 +1,3 @@
+Modle
+ ☐ Girl qq(string), city(string), age(integer), height(integer), weight(integer), grade_id(integer),age_min(integer), age_max(integer), height_min(integer), height_max(integer), weight_min(integer), weight_max(integer), comment(string)
+ ☐ Grade(string)

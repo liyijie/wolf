@@ -1,4 +1,6 @@
 Wolf::Application.routes.draw do
+  resources :girls
+
   devise_for :users
   devise_for :admins
   mount RailsAdmin::Engine => '/wolfadmin', :as => 'rails_admin'

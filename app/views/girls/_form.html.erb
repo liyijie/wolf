@@ -1,0 +1,69 @@
+<%= form_for(@girl) do |f| %>
+  <% if @girl.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@girl.errors.count, "error") %> prohibited this girl from being saved:</h2>
+
+      <ul>
+      <% @girl.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :qq %><br>
+    <%= f.text_field :qq %>
+  </div>
+  <div class="field">
+    <%= f.label :city %><br>
+    <%= f.text_field :city %>
+  </div>
+  <div class="field">
+    <%= f.label :age %><br>
+    <%= f.number_field :age %>
+  </div>
+  <div class="field">
+    <%= f.label :height %><br>
+    <%= f.number_field :height %>
+  </div>
+  <div class="field">
+    <%= f.label :weight %><br>
+    <%= f.number_field :weight %>
+  </div>
+  <div class="field">
+    <%= f.label :grade_id %><br>
+    <%= f.number_field :grade_id %>
+  </div>
+  <div class="field">
+    <%= f.label :age_min %><br>
+    <%= f.number_field :age_min %>
+  </div>
+  <div class="field">
+    <%= f.label :age_max %><br>
+    <%= f.number_field :age_max %>
+  </div>
+  <div class="field">
+    <%= f.label :height_min %><br>
+    <%= f.number_field :height_min %>
+  </div>
+  <div class="field">
+    <%= f.label :height_max %><br>
+    <%= f.number_field :height_max %>
+  </div>
+  <div class="field">
+    <%= f.label :weight_min %><br>
+    <%= f.number_field :weight_min %>
+  </div>
+  <div class="field">
+    <%= f.label :weight_max %><br>
+    <%= f.number_field :weight_max %>
+  </div>
+  <div class="field">
+    <%= f.label :comment %><br>
+    <%= f.text_field :comment %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

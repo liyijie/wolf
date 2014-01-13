@@ -1,0 +1,51 @@
+<h1>Listing girls</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Qq</th>
+      <th>City</th>
+      <th>Age</th>
+      <th>Height</th>
+      <th>Weight</th>
+      <th>Grade</th>
+      <th>Age min</th>
+      <th>Age max</th>
+      <th>Height min</th>
+      <th>Height max</th>
+      <th>Weight min</th>
+      <th>Weight max</th>
+      <th>Comment</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @girls.each do |girl| %>
+      <tr>
+        <td><%= girl.qq %></td>
+        <td><%= girl.city %></td>
+        <td><%= girl.age %></td>
+        <td><%= girl.height %></td>
+        <td><%= girl.weight %></td>
+        <td><%= girl.grade_id %></td>
+        <td><%= girl.age_min %></td>
+        <td><%= girl.age_max %></td>
+        <td><%= girl.height_min %></td>
+        <td><%= girl.height_max %></td>
+        <td><%= girl.weight_min %></td>
+        <td><%= girl.weight_max %></td>
+        <td><%= girl.comment %></td>
+        <td><%= link_to 'Show', girl %></td>
+        <td><%= link_to 'Edit', edit_girl_path(girl) %></td>
+        <td><%= link_to 'Destroy', girl, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Girl', new_girl_path %>
