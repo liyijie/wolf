@@ -1,10 +1,12 @@
 class GirlsController < ApplicationController
   before_action :set_girl, only: [:show, :edit, :update, :destroy]
 
+  before_filter :authenticate_user!
+
   # GET /girls
   # GET /girls.json
   def index
-    @girls = Girl.all
+    @girls = Girl.all_fit current_user
   end
 
   # GET /girls/1
