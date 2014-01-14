@@ -7,8 +7,6 @@ class ApplicationController < ActionController::Base
   protected
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:account_update) << :height
-    devise_parameter_sanitizer.for(:account_update) << :birth
-    devise_parameter_sanitizer.for(:account_update) << :weight
+    devise_parameter_sanitizer.for(:account_update).push(:height, :birth, :weight, :city)
   end
 end

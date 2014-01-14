@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140113083802) do
+ActiveRecord::Schema.define(version: 20140114144810) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -85,6 +85,7 @@ ActiveRecord::Schema.define(version: 20140113083802) do
     t.integer  "height"
     t.integer  "weight"
     t.date     "birth"
+    t.string   "city"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
