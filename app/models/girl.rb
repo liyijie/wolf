@@ -33,7 +33,7 @@ class Girl < ActiveRecord::Base
     
     if !(user.age >= self.age_min and user.age <= self.age_max \
       and user.height >= self.height_min and user.height <= self.height_max \
-      and user.age >= self.age_min and user.age <= self.age_max)
+      and user.weight >= self.weight_min and user.weight <= self.weight_max)
       self.fit_error = "申请失败：您不符合对方的要求"
       return false
     end
