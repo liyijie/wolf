@@ -21,20 +21,24 @@ class Girl < ActiveRecord::Base
       return false
     end
 
-    if user.city == self.city
-      return true
-    else
+    if user_grade == "none"
+      self.fit_error = "申请失败：此信息仅限VIP成员申请"
+      return false
+    end
+
+    if user.city != self.city
       self.fit_error = "申请失败：不在同一城市不允许申请，VIP成员请联系管理员"
+      return false
     end
     
-    if (user.age >= self.age_min and user.age <= self.age_max \
+    if !(user.age >= self.age_min and user.age <= self.age_max \
       and user.height >= self.height_min and user.height <= self.height_max \
       and user.age >= self.age_min and user.age <= self.age_max)
-      return true
-    else
       self.fit_error = "申请失败：您不符合对方的要求"
       return false
     end
+
+    return true
   end
 
   def age
