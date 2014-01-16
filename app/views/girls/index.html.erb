@@ -1,6 +1,6 @@
 <div>
   <% @girls.each do |girl| %>
-    <h1 class="success"><%= girl.info %></h1>
+    <h1 class="text-success"><%= girl.info %></h1>
     <%= link_to "申请", girl_path(girl), class: "btn btn-lg btn-primary" %>
     <p class="lead"><%= girl.demand %><br><%= girl.comment %></p>
     <hr>
