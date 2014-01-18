@@ -1,5 +1,6 @@
 class Girl < ActiveRecord::Base
   belongs_to :grade
+  default_scope order: 'id DESC'
 
   attr_accessor :fit_error
 
