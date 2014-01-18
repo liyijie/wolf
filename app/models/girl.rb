@@ -2,14 +2,16 @@ class Girl < ActiveRecord::Base
   belongs_to :grade
   default_scope order: 'id DESC'
 
+  self.per_page = 10
+
   attr_accessor :fit_error
 
   def self.avaliables
-    girls = []
-    self.all.each do |girl|
-      girls << girl if(girl.grade.to_s == "member" || girl.grade.to_s == "vip")
+    indexs = []
+    Grade.all.each do |grade|
+      indexs << grade.id if grade.to_s == "member" or grade.to_s == "vip"
     end
-    girls
+    where(grade_id: indexs)
   end
 
   def fit current_user

@@ -6,8 +6,7 @@ class GirlsController < ApplicationController
   # GET /girls
   # GET /girls.json
   def index
-    @girls = Girl.avaliables
-    # @girls = Girl.all
+    @girls = Girl.avaliables.page(params[:page])
   end
 
   # GET /girls/1
