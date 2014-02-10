@@ -31,7 +31,7 @@ class Girl < ActiveRecord::Base
 
     # validate the province
     if user.city.to_s[0..1] != self.city.to_s[0..1]
-      self.fit_error = "申请失败：不在统一省份不允许申请，VIP成员请向管理员申请外省肉"
+      self.fit_error = "申请失败：不在同一省份不允许申请，VIP成员请向管理员申请外省肉"
       return false
     end
     
