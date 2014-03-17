@@ -6,6 +6,56 @@ class Girl < ActiveRecord::Base
 
   attr_accessor :fit_error
 
+  rails_admin do 
+    edit do
+      field :qq
+      field :city
+      field :height
+      field :weight
+      field :birth
+      field :grade_id
+      field :age_min
+      field :age_max
+      field :height_min
+      field :height_max
+      field :weight_min
+      field :weight_max
+      field :comment
+    end
+
+    list do
+      field :qq
+      field :city
+      field :height
+      field :weight
+      field :birth
+      field :comment
+      field :grade_id
+      field :age_min
+      field :age_max
+      field :height_min
+      field :height_max
+      field :weight_min
+      field :weight_max
+    end
+
+    show do
+      field :qq
+      field :city
+      field :height
+      field :weight
+      field :birth
+      field :comment
+      field :grade_id
+      field :age_min
+      field :age_max
+      field :height_min
+      field :height_max
+      field :weight_min
+      field :weight_max
+    end
+  end
+
   def self.avaliables
     indexs = []
     Grade.all.each do |grade|
