@@ -13,7 +13,7 @@ class Girl < ActiveRecord::Base
       field :height
       field :weight
       field :birth
-      field :grade_id
+      field :grade
       field :age_min
       field :age_max
       field :height_min
@@ -30,7 +30,7 @@ class Girl < ActiveRecord::Base
       field :weight
       field :birth
       field :comment
-      field :grade_id
+      field :grade
       field :age_min
       field :age_max
       field :height_min
@@ -46,7 +46,7 @@ class Girl < ActiveRecord::Base
       field :weight
       field :birth
       field :comment
-      field :grade_id
+      field :grade
       field :age_min
       field :age_max
       field :height_min
