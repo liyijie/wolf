@@ -30,7 +30,15 @@ class Girl < ActiveRecord::Base
     end
 
     # validate the province
-    if user.city.to_s[0..1] != self.city.to_s[0..1]
+    city_valid = false
+    user_citys = user.city.to_s.split("；")
+    user_citys.each do |city|
+      if city[0..1] == self.city.to_s[0..1]
+        city_valid = true
+        break
+      end
+    end
+    unless city_valid
       self.fit_error = "申请失败：不在同一省份不允许申请，VIP成员请向管理员申请外省肉"
       return false
     end
