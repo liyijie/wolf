@@ -7,12 +7,14 @@ class GirlsController < ApplicationController
   # GET /girls.json
   def index
     @girls = Girl.avaliables.page(params[:page])
+    @advertisement = Advertisement.last
   end
 
   # GET /girls/1
   # GET /girls/1.json
   def show
     @girl.fit current_user
+    @advertisement = Advertisement.last
   end
 
   # GET /girls/new
