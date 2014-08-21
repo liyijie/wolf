@@ -1,9 +1,12 @@
 <div>
-  <% @girls.each do |girl| %>
+  <% @girls.each_with_index do |girl, index| %>
     <h1 class="text-success"><%= girl.info %></h1>
     <%= link_to "申请", girl_path(girl), class: "btn btn-lg btn-primary" %>
     <p class="lead"><%= girl.demand %><br><%= girl.comment %></p>
     <hr>
+    <% if (index % 3 == 2) %>
+      <%= render 'advertisements/info' %>
+    <% end %>
   <% end %>
 </div>
 

@@ -1,4 +1,6 @@
 Wolf::Application.routes.draw do
+  resources :advertisements
+
   resources :girls
 
   devise_for :users
