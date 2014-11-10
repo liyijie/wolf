@@ -12,4 +12,4 @@
 <%= link_to '返回列表', girls_path, class: "btn btn-lg btn-primary" %>
 
 <hr>
-<%= render 'advertisements/info' %>
+<%= render partial: 'advertisements/info', locals: { advertisement: @advertisement } %>
