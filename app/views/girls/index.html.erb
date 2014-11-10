@@ -5,7 +5,7 @@
     <p class="lead"><%= girl.demand %><br><%= girl.comment %></p>
     <hr>
     <% if (index % 3 == 2) %>
-      <%= render 'advertisements/info' %>
+      <%= render partial: 'advertisements/info', locals: { advertisement: @advertisements[1- index%2] }   if @advertisements[1- index%2] %>
     <% end %>
   <% end %>
 </div>

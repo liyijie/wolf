@@ -1,3 +1,25 @@
+# == Schema Information
+#
+# Table name: girls
+#
+#  id         :integer          not null, primary key
+#  qq         :string(255)
+#  city       :string(255)
+#  height     :integer
+#  weight     :integer
+#  grade_id   :integer
+#  age_min    :integer
+#  age_max    :integer
+#  height_min :integer
+#  height_max :integer
+#  weight_min :integer
+#  weight_max :integer
+#  comment    :string(255)
+#  created_at :datetime
+#  updated_at :datetime
+#  birth      :date
+#
+
 class Girl < ActiveRecord::Base
   belongs_to :grade
   default_scope order: 'id DESC'
