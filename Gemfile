@@ -39,6 +39,8 @@ gem 'unicorn'
 # Mysql
 gem 'mysql2', '~> 0.3.18'
 
+gem 'rails_admin'
+
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
 
