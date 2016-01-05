@@ -22,7 +22,7 @@
 
 class Girl < ActiveRecord::Base
   belongs_to :grade
-  default_scope { order: 'id DESC' }
+  default_scope { order('id DESC') }
 
   self.per_page = 10
 
