@@ -37,7 +37,7 @@ gem "kaminari", "~> 0.15.1"
 gem 'unicorn'
 
 # Mysql
-gem 'mysql2'
+gem 'mysql2', '~> 0.3.18'
 
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
