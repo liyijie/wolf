@@ -36,6 +36,9 @@ gem "kaminari", "~> 0.15.1"
 # Use unicorn as the app server
 gem 'unicorn'
 
+# Mysql
+gem 'mysql2'
+
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
 
