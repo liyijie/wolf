@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
   protected
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:account_update).push(:height, :birth, :weight, :city)
+    # devise_parameter_sanitizer.for(:account_update).push(:height, :birth, :weight, :city)
+    devise_parameter_sanitizer.permit(:account_update, keys: [:height, :birth, :weight, :city])
   end
 end
