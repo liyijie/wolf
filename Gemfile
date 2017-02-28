@@ -1,5 +1,5 @@
 # source 'https://rubygems.org'
-source 'https://ruby.taobao.org'
+source 'https://gems.ruby-china.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
@@ -34,7 +34,7 @@ gem "kaminari", "~> 0.15.1"
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
 # Use unicorn as the app server
-gem 'unicorn'
+gem 'puma'
 
 # Mysql
 gem 'mysql2', '~> 0.3.18'
